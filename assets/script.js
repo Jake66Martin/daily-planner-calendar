@@ -12,7 +12,7 @@ $(function () {
 
 
   var hour = parseInt(dayjs().format('H'));
-
+  console.log(hour)
 
   hourArray = []
 
@@ -51,18 +51,44 @@ $(function () {
   for (i = 0; i < hourArray.length; i++) {
 
     if (hourArray[i] === hour) {
-      $(".description").text("hello")
+
+      var color = $("#" + hourArray[i]);
+
+      color.removeClass("past")
+
+      color.removeClass("future")
+
+      color.addClass("present")
+
+
+    } else if (hourArray[i] < hour) {
+
+      var color = $("#" + hourArray[i]);
+
+      color.removeClass("present")
+
+      color.removeClass("future")
+
+      color.addClass("past")
+
+    } else {
+
+      var color = $("#" + hourArray[i]);
+
+      color.removeClass("past")
+
+      color.removeClass("present")
+
+      color.addClass("future")
+
     }
-    
-
-   
-
-    }
+  }
 
 
 
 
-  
+
+
 
 
 
