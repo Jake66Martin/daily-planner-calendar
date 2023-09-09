@@ -18,9 +18,9 @@ $(function () {
   
   var buttons = $("button");
 
-  var yolo = $("#hour9")
+  
 
-  var hola = yolo.value
+  
 
 
   hourArray = []
@@ -103,8 +103,15 @@ $(function () {
 
     buttons.on("click", function () {
  
-    localStorage.setItem("#9", hola)
- 
+    localStorage.setItem("9", $("#hour9").val())
+    localStorage.setItem("10", $("#hour10").val())
+    localStorage.setItem("11", $("#hour11").val())
+    localStorage.setItem("12", $("#hour12").val())
+    localStorage.setItem("13", $("#hour13").val())
+    localStorage.setItem("14", $("#hour14").val())
+    localStorage.setItem("15", $("#hour15").val())
+    localStorage.setItem("16", $("#hour16").val())
+    localStorage.setItem("17", $("#hour17").val())
     })
  
    }
