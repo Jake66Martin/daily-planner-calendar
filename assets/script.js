@@ -47,28 +47,17 @@ $(function () {
   hourArray.push(hour16N)
   hourArray.push(hour17N)
 
+
   for (i = 0; i < hourArray.length; i++) {
 
     if (hourArray[i] === hour) {
-
-      
-      $(hourArray[i]).removeClass("row time-block")
-
-      $(hourArray[i]).addClass("row time-block present")
-
-    } else if (hourArray[i] >= 9 && hourArray[i] < hour) {
-
-     console.log("hello")
-
-      $(hourArray[i]).removeClass("row time-block")
-
-      $(hourArray[i]).addClass("row time-block past")
-
-    } else {
+      $(".description").text("hello")
+    }
+    
 
    
 
-    }}
+    }
 
 
 
