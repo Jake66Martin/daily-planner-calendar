@@ -14,48 +14,66 @@ $(function () {
   var hour = parseInt(dayjs().format('H'));
 
 
-  hourArray = [
-    hour9 = parseInt($("#9").attr("id")),
-    hour10 = parseInt($("#10").attr("id")),
-    hour11 = parseInt($("#11").attr("id")),
-    hour12 = parseInt($("#12").attr("id")),
-    hour13 = parseInt($("#13").attr("id")),
-    hour14 = parseInt($("#14").attr("id")),
-    hour15 = parseInt($("#15").attr("id")),
-    hour16 = parseInt($("#16").attr("id")),
-    hour17 = parseInt($("#17").attr("id"))
-  ]
+  hourArray = []
+
+
+  var hour9 = $("#9").attr("id")
+  var hour10 = $("#10").attr("id")
+  var hour11 = $("#11").attr("id")
+  var hour12 = $("#12").attr("id")
+  var hour13 = $("#13").attr("id")
+  var hour14 = $("#14").attr("id")
+  var hour15 = $("#15").attr("id")
+  var hour16 = $("#16").attr("id")
+  var hour17 = $("#17").attr("id")
+
+  var hour9N = parseInt(hour9)
+  var hour10N = parseInt(hour10)
+  var hour11N = parseInt(hour11)
+  var hour12N = parseInt(hour12)
+  var hour13N = parseInt(hour13)
+  var hour14N = parseInt(hour14)
+  var hour15N = parseInt(hour15)
+  var hour16N = parseInt(hour16)
+  var hour17N = parseInt(hour17)
+
+  hourArray.push(hour9N)
+  hourArray.push(hour10N)
+  hourArray.push(hour11N)
+  hourArray.push(hour12N)
+  hourArray.push(hour13N)
+  hourArray.push(hour14N)
+  hourArray.push(hour15N)
+  hourArray.push(hour16N)
+  hourArray.push(hour17N)
 
   for (i = 0; i < hourArray.length; i++) {
 
-    if (hourArray[i] === 0) {
+    if (hourArray[i] === hour) {
 
-      console.log("hello")
+      
+      $(hourArray[i]).removeClass("row time-block")
 
+      $(hourArray[i]).addClass("row time-block present")
 
-    } else if (hourArray[i] < hour) {
+    } else if (hourArray[i] >= 9 && hourArray[i] < hour) {
 
-      hourArray[i].attr("class", "row time-block past")
+     console.log("hello")
+
+      $(hourArray[i]).removeClass("row time-block")
+
+      $(hourArray[i]).addClass("row time-block past")
 
     } else {
 
-      console.log("arigato")
+   
 
-    }
-  }
-
+    }}
 
 
-  // hourArray.push(hour9.attr("id"))
-  // hourArray.push(hour10.attr("id"))
-  // hourArray.push(hour11.attr("id"))
-  // hourArray.push(hour12.attr("id"))
-  // hourArray.push(hour13.attr("id"))
-  // hourArray.push(hour14.attr("id"))
-  // hourArray.push(hour15.attr("id"))
-  // hourArray.push(hour16.attr("id"))
-  // hourArray.push(hour17.attr("id"))
 
+
+  
 
 
 
