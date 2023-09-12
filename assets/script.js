@@ -1,31 +1,17 @@
-// Wrap all code that interacts with the DOM in a call to jQuery to ensure that
-// the code isn't run until the browser has finished rendering all the elements
-// in the html.
+
 $(function () {
-  // TODO: Add a listener for click events on the save button. This code should
-  // use the id in the containing time-block as a key to save the user input in
-  // local storage. HINT: What does `this` reference in the click listener
-  // function? How can DOM traversal be used to get the "hour-x" id of the
-  // time-block containing the button that was clicked? How might the id be
-  // useful when saving the description in local storage?
-
-
-
-
-
-
+// This code retrieves the time from dayjs and parses it into a number
   var hour = parseInt(dayjs().format('H'));
+
+
 
   var buttons = $("button");
 
 
 
-
-
-
   hourArray = []
 
-
+// This code grabs the id value of the associated elements
   var hour9 = $("#9").attr("id");
   var hour10 = $("#10").attr("id");
   var hour11 = $("#11").attr("id");
@@ -36,6 +22,8 @@ $(function () {
   var hour16 = $("#16").attr("id");
   var hour17 = $("#17").attr("id");
 
+
+// This code parses the id values and turns them into numbers
   var hour9N = parseInt(hour9);
   var hour10N = parseInt(hour10);
   var hour11N = parseInt(hour11);
@@ -46,6 +34,7 @@ $(function () {
   var hour16N = parseInt(hour16);
   var hour17N = parseInt(hour17);
 
+// This code pushes the parsed values into the created array
   hourArray.push(hour9N);
   hourArray.push(hour10N);
   hourArray.push(hour11N);
@@ -56,94 +45,70 @@ $(function () {
   hourArray.push(hour16N);
   hourArray.push(hour17N);
 
-
+  
+// This code loops through the time blocks in the array and compares them to the time in order to give them their color codes
   for (i = 0; i < hourArray.length; i++) {
 
     if (hourArray[i] === hour) {
 
       var color = $("#" + hourArray[i]);
 
-      color.removeClass("past")
+      color.removeClass("past");
 
-      color.removeClass("future")
+      color.removeClass("future");
 
-      color.addClass("present")
+      color.addClass("present");
 
 
     } else if (hourArray[i] < hour) {
 
       var color = $("#" + hourArray[i]);
 
-      color.removeClass("present")
+      color.removeClass("present");
 
-      color.removeClass("future")
+      color.removeClass("future");
 
-      color.addClass("past")
+      color.addClass("past");
 
     } else {
 
       var color = $("#" + hourArray[i]);
 
-      color.removeClass("past")
+      color.removeClass("past");
 
-      color.removeClass("present")
+      color.removeClass("present");
 
-      color.addClass("future")
+      color.addClass("future");
 
     }
   }
 
 
-
+// This code delegates an event listener to the buttons in order to save the content to the local storage for each button and associated textarea
   $(".btn").on("click", function (event) {
 
-   event.stopPropagation()
+  
+    var box = $(this).parent().attr("id");
+  
+    var text = $(this).siblings("textarea").val()
+
+    localStorage.setItem(box, text);
    
-   var text9 = $("#hour9").val()
-   var text10 = $("#hour10").val()
-   var text11 = $("#hour11").val()
-   var text12 = $("#hour12").val()
-   var text13 = $("#hour13").val()
-   var text14 = $("#hour14").val()
-   var text15 = $("#hour15").val()
-   var text16 = $("#hour16").val()
-   var text17 = $("#hour17").val()
-
-
-   var box9 = $(this).parent().attr("id")
-   var box10 = $(this).parent().attr("id")
-   var box11 = $(this).parent().attr("id")
-   var box12 = $(this).parent().attr("id")
-   var box13 = $(this).parent().attr("id")
-   var box14 = $(this).parent().attr("id")
-   var box15 = $(this).parent().attr("id")
-   var box16 = $(this).parent().attr("id")
-   var box17 = $(this).parent().attr("id")
-
-
-   
-   localStorage.setItem(box9, text9)
-   localStorage.setItem(box10, text10)
-   localStorage.setItem(box11, text11)
-   localStorage.setItem(box12, text12)
-   localStorage.setItem(box13, text13)
-   localStorage.setItem(box14, text14)
-   localStorage.setItem(box15, text15)
-   localStorage.setItem(box16, text16)
-   localStorage.setItem(box17, text17)
    
     
   })
 
-  $("#hour9").val(localStorage.getItem("9"))
-  $("#hour10").val(localStorage.getItem("10"))
-  $("#hour11").val(localStorage.getItem("11"))
-  $("#hour12").val(localStorage.getItem("12"))
-  $("#hour13").val(localStorage.getItem("13"))
-  $("#hour14").val(localStorage.getItem("14"))
-  $("#hour15").val(localStorage.getItem("15"))
-  $("#hour16").val(localStorage.getItem("16"))
-  $("#hour17").val(localStorage.getItem("17"))
+
+// This code retrieves the saved data in order to persist on the screen
+  $("#hour9").val(localStorage.getItem("9"));
+  $("#hour10").val(localStorage.getItem("10"));
+  $("#hour11").val(localStorage.getItem("11"));
+  $("#hour12").val(localStorage.getItem("12"));
+  $("#hour13").val(localStorage.getItem("13"));
+  $("#hour14").val(localStorage.getItem("14"));
+  $("#hour15").val(localStorage.getItem("15"));
+  $("#hour16").val(localStorage.getItem("16"));
+  $("#hour17").val(localStorage.getItem("17"));
 
 
 
