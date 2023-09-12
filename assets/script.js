@@ -95,19 +95,44 @@ $(function () {
 
 
 
-  $("#divParent").on("click", "button", function (event) {
+  $(".btn").on("click", function (event) {
+
+   event.stopPropagation()
+   
+   var text9 = $("#hour9").val()
+   var text10 = $("#hour10").val()
+   var text11 = $("#hour11").val()
+   var text12 = $("#hour12").val()
+   var text13 = $("#hour13").val()
+   var text14 = $("#hour14").val()
+   var text15 = $("#hour15").val()
+   var text16 = $("#hour16").val()
+   var text17 = $("#hour17").val()
 
 
-    localStorage.setItem("9", $("#hour9").val())
-    localStorage.setItem("10", $("#hour10").val())
-    localStorage.setItem("11", $("#hour11").val())
-    localStorage.setItem("12", $("#hour12").val())
-    localStorage.setItem("13", $("#hour13").val())
-    localStorage.setItem("14", $("#hour14").val())
-    localStorage.setItem("15", $("#hour15").val())
-    localStorage.setItem("16", $("#hour16").val())
-    localStorage.setItem("17", $("#hour17").val())
+   var box9 = $(this).parent().attr("id")
+   var box10 = $(this).parent().attr("id")
+   var box11 = $(this).parent().attr("id")
+   var box12 = $(this).parent().attr("id")
+   var box13 = $(this).parent().attr("id")
+   var box14 = $(this).parent().attr("id")
+   var box15 = $(this).parent().attr("id")
+   var box16 = $(this).parent().attr("id")
+   var box17 = $(this).parent().attr("id")
 
+
+   
+   localStorage.setItem(box9, text9)
+   localStorage.setItem(box10, text10)
+   localStorage.setItem(box11, text11)
+   localStorage.setItem(box12, text12)
+   localStorage.setItem(box13, text13)
+   localStorage.setItem(box14, text14)
+   localStorage.setItem(box15, text15)
+   localStorage.setItem(box16, text16)
+   localStorage.setItem(box17, text17)
+   
+    
   })
 
   $("#hour9").val(localStorage.getItem("9"))
@@ -122,7 +147,7 @@ $(function () {
 
 
 
-
+ 
 
 
 
@@ -150,7 +175,7 @@ $(function () {
 
   $("#currentDay").text(today);
 
-
+ 
 
 
 
