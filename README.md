@@ -6,6 +6,7 @@ text within textareas that gets saved to local storage in order to be retrieved 
 It also has color coded timeblocks indicating past timeblocks, the present timeblock, and future timeblocks. 
 
 ## Live URL
+https://jake66martin.github.io/daily-planner-calendar/
 
 ## Screenshot
 ![Screenshot (32)](https://github.com/Jake66Martin/daily-planner-calendar/assets/139023505/5a5518f0-b70c-4ba0-8949-5ee3686eb5ed)
