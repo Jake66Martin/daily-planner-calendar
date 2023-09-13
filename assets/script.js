@@ -113,29 +113,7 @@ $(function () {
 
 
  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  //
-  // TODO: Add code to get any user input that was saved in localStorage and set
-  // the values of the corresponding textarea elements. HINT: How can the id
-  // attribute of each time-block be used to do this?
-  //
+// This code sets the formatted dayjs value and pushes it to the header
   var today = dayjs().format('dddd, MMMM D[th]');
 
   $("#currentDay").text(today);
